@@ -1,0 +1,33 @@
+
+#game-div {
+    background-color: lightsteelblue;
+    height: 75%;
+    width: 65%;
+}
+
+.round-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.guess {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+}
+
+.results-div {
+    display: flex;
+    flex-basis: 135px;
+    background-color: darkslategrey;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.result {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

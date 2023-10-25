@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MasterMind</title>
+        <link rel="stylesheet", href="styles.css">
+        <script src="script.js" defer></script>
+
+    </head>
+    <body>
+        <div id="core">
+            <h1>Mastermind</h1>
+            <h2>Instructions</h2>
+            <p>Right and left click to cycle colors <br>
+                After submiting a guess, colored circles will appear. <br/>
+                For each green: one of your selected colors was in the correct space.<br/>
+                For each yellow: one of your selected colors needs to be moved but is part of the code <br/>
+                For each red: one of your selected colors is not in the code, or you put too many of the same color.
+            </p>
+            <form id="game-settings">
+                <select id="color-select"></select>
+                <label for="color-select">How many colors would you like to play with</label>
+                <select id="difficulty-select">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <label for="difficulty-select">Select your difficulty</label>
+
+                <button id="game-start" type="submitfor">Start</button>
+                
+            </form>
+        </div>
+    </body>
+</html>
