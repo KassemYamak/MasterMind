@@ -17,6 +17,8 @@ for (let i = 6; i<= colors.length; i++) {
 };
 
 
+
+
 function makeGameSettings() {
     const gameDiv = document.querySelector("#core");
     gameDiv.appendChild(gameSettings);
@@ -60,8 +62,15 @@ function makeGameDiv() {
     gameDiv.setAttribute("id", "game-div")
     //gameDiv.setAttribute("height", '75px');
     //gameDiv.setAttribute("width", '200px');
+    let roundCounter = document.createElement("p");
+    roundCounter.setAttribute('id', "roundCounter");
+    gameDiv.appendChild(roundCounter)
     document.querySelector("#core").appendChild(gameDiv);
 };
+
+function updateRoundCounter(){
+    document.querySelector("#roundCounter").innerText = "Guesses remaining: " + (maxRound - round + 1)
+}
 
 function makeRoundDiv() {
     let roundDiv = document.createElement('div');
@@ -234,12 +243,14 @@ if ((!currentGuess.every((result) => result == 'correct'))
     })
 
     round++
+    updateRoundCounter()
     makeRoundDiv();
     makeGuessDivs();
 
-    } else if (currentGuess.every((result)=> result = "correct") ){
+    } else if (currentGuess.every((result)=> result == "correct") ){
     youWin()
     } else if (round >= maxRound) {
+        console.log("you've used your last guess")
     youLose();
    };
    setActiveGuess();
@@ -281,6 +292,7 @@ function gameStart() {
     removeGameSettings();
     makeGameDiv();
     round = 1;
+    updateRoundCounter()
     makeRoundDiv();
     makeGuessDivs();
     makeSubmitRestart();
